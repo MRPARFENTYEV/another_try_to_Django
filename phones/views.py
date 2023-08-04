@@ -26,7 +26,7 @@ def show_catalog(request):
 
     #     print(phones)
     #     print(type(phones))
-    #     print("SEX")
+    #   
     #     context = {'id': phones.id,
     #            'name': phones.name,
     #            'price': phones.price,
@@ -66,8 +66,6 @@ def show_catalog(request):
 #            }
 
 # context ={'phone': object}
-
-# print("Sex with men")
 # print(context)
 # context = {'name': object.name,
 #            'price': object.price,
