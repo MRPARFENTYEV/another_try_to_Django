@@ -1,3 +1,4 @@
+
 {% extends "base.html" %}
 
 {% load static %}
@@ -5,6 +6,7 @@
 {% block title %}Каталог{% endblock %}
 
 {% block content %}
+
   <div class="container">
     <div class="header">
       <h1>Каталог</h1>
@@ -21,6 +23,7 @@
       {% for phone in phones %}
         <div class="phone">
           <a href="{% url 'phone' phone.slug %}">
+
             <h3>{{ phone.name }}</h3>
           </a>
           <div class="price">Стоимость: {{ phone.price }} ₽</div>
