@@ -48,22 +48,27 @@ def index(request):
 
 def show_catalog(request):
     template = 'catalog.html'
-    alph_sort = request.GET['sort']
+
     phone_object = Phone.objects.all()
-    if alph_sort  - получить реквест в строку и если есть параметры...
-        # phone_object = Phone.objects.all()
+    indicator = str(request).split()[-1]
+
+    if "'/catalog/'>" in indicator:
+
         context = {'phones': phone_object}
         return render(request, template, context)
-    elif alph_sort == 'name':
+    elif indicator == "'/catalog/?sort=name'>":
+        alph_sort = request.GET['sort']
         phone_object = Phone.objects.order_by(alph_sort)
         context = {'phones': phone_object}
         return render(request, template, context)
-    elif alph_sort == 'max_price':
+    elif indicator == "'/catalog/?sort=max_price'>":
+
         alph_sort = '-price'
         phone_object = Phone.objects.order_by(alph_sort)
         context = {'phones': phone_object}
         return render(request, template, context)
-    elif alph_sort == 'min_price':
+    elif indicator == "'/catalog/?sort=min_price'>":
+
         alph_sort = 'price'
         phone_object = Phone.objects.order_by(alph_sort)
         context = {'phones': phone_object}
